@@ -511,6 +511,12 @@
         }
         
         /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .navbar {
+                padding: 15px 3%;
+            }
+        }
+        
         @media (max-width: 992px) {
             .banner-content {
                 flex-direction: column-reverse;
@@ -520,6 +526,10 @@
                 padding-right: 0;
                 text-align: center;
                 margin-top: 40px;
+            }
+            
+            .banner-buttons {
+                justify-content: center;
             }
             
             .power-grid, .helping-cards, .future-grid {
@@ -538,28 +548,46 @@
             
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
         }
         
         @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                padding: 15px;
+            .menu-toggle {
+                display: block;
             }
             
             .nav-links {
-                margin-top: 20px;
-                flex-wrap: wrap;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background-color: #fff;
+                flex-direction: column;
+                align-items: center;
                 justify-content: center;
+                padding: 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+            
+            .nav-links.active {
+                right: 0;
             }
             
             .nav-links li {
-                margin: 10px 15px;
+                margin: 15px 0;
             }
             
             .nav-btn {
                 margin-left: 0;
-                margin-top: 15px;
+                margin-top: 20px;
+            }
+            
+            .banner {
+                padding: 120px 0 80px;
             }
             
             .banner-title {
@@ -579,17 +607,22 @@
             }
             
             .client-logo img {
-                height: 30px;
+                height: 40px;
+            }
+            
+            .power-card, .helping-card {
+                padding: 20px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
         
         @media (max-width: 576px) {
-            .power-grid, .helping-cards, .future-grid {
-                grid-template-columns: 1fr;
+            .banner {
+                padding: 100px 0 60px;
             }
             
             .banner-title {
@@ -600,9 +633,14 @@
                 font-size: 1rem;
             }
             
+            .banner-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             .btn {
-                padding: 8px 16px;
-                font-size: 14px;
+                width: 100%;
+                padding: 12px;
             }
             
             .section-title {
@@ -611,6 +649,50 @@
             
             .section-subtitle {
                 font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+            
+            .power-grid, .helping-cards, .future-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .power-card, .helping-card {
+                padding: 25px;
+            }
+            
+            .future-card {
+                height: 250px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .form-control {
+                padding: 12px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .banner-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .client-logo img {
+                height: 30px;
+            }
+            
+            .power-icon {
+                font-size: 2.5rem;
+            }
+            
+            .power-title, .helping-title, .future-title {
+                font-size: 1.3rem;
             }
         }
     </style>
